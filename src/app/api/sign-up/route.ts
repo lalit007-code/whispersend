@@ -3,6 +3,8 @@ import UserModel from "@/model/user";
 import bcrypt from "bcryptjs";
 
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
+
+//signinAPI
 export async function POST(request: Request) {
   await dbConnect();
   try {
@@ -27,6 +29,7 @@ export async function POST(request: Request) {
 
     const existingUserByEmail = await UserModel.findOne({ email });
 
+    //random verify code
     const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
 
     if (existingUserByEmail) {
