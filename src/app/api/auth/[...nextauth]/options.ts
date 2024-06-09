@@ -45,6 +45,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  //modified callbacks,session and jwt for not calling db again n again
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
