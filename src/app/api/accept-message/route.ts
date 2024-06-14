@@ -4,6 +4,7 @@ import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/user";
 import { User } from "next-auth";
 
+//accpeting for receving message (User as receiver)
 export async function POST(request: Request) {
   await dbConnect();
   const session = await getServerSession(authOptions);
@@ -59,7 +60,7 @@ export async function POST(request: Request) {
       }
     );
   } catch (error) {
-    console.log("Failed to update user status to accpet message");
+    console.log("Failed to update user status to accept message");
     return Response.json(
       {
         success: false,
@@ -72,6 +73,7 @@ export async function POST(request: Request) {
   }
 }
 
+//to know the current status for user
 export async function GET(request: Request) {
   await dbConnect();
   const session = await getServerSession(authOptions);
@@ -116,7 +118,7 @@ export async function GET(request: Request) {
       }
     );
   } catch (error) {
-    console.log("Failed to update user status to accpet message");
+    console.log("Failed to get user status for accepting message");
     return Response.json(
       {
         success: false,

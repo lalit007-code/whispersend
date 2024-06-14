@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     );
   }
 
-  //for aggreation
+  //for aggreation pipeline
   const user_Id = new mongoose.Types.ObjectId(user._id);
 
   try {
@@ -42,6 +42,7 @@ export async function GET(request: Request) {
         },
       },
     ]);
+    
     if (!user || user.length === 0) {
       return Response.json(
         {
