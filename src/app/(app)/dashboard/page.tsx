@@ -177,10 +177,10 @@ function UserDashboard() {
       </Button>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
         {messages.length > 0 ? (
-          messages.map((item) => (
+          messages.map((message) => (
             <MessageCard
-              key={item._id}
-              message={item}
+              key={message._id}
+              message={message}
               onMessageDelete={handleDeleteMessage}
             />
           ))
