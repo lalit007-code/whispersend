@@ -10,15 +10,16 @@ export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
 
   const user: User = session?.user as User;
+  console.log(user);
 
-  if (!session || !session.user) {
+  if (!session || !user) {
     return Response.json(
       {
         success: false,
         meessage: "Not Authenticated",
       },
       {
-        status: 401,
+        status: 400,
       }
     );
   }
@@ -29,14 +30,13 @@ export async function POST(request: Request) {
 
   try {
     const updatedUser = await UserModel.findByIdAndUpdate(
-      {
-        user_Id,
-      },
+      user_Id,
       { isAcceptingMessage: acceptMessages },
       {
         new: true,
       }
     );
+
     if (!updatedUser) {
       return Response.json(
         {
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
         updatedUser,
       },
       {
-        status: 401,
+        status: 200,
       }
     );
   } catch (error) {
@@ -87,7 +87,7 @@ export async function GET(request: Request) {
         meessage: "Not Authenticated",
       },
       {
-        status: 401,
+        status: 402,
       }
     );
   }

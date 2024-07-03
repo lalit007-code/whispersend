@@ -8,12 +8,13 @@ export async function DELETE(
   { params }: { params: { messageid: string } }
 ) {
   const messageid = params.messageid;
+
   await dbConnect();
   const session = await getServerSession(authOptions);
 
   const user: User = session?.user as User;
 
-  if (!session || !session.user) {
+  if (!session || !user) {
     return Response.json(
       {
         success: false,
