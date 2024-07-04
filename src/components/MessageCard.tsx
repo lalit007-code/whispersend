@@ -40,6 +40,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
     toast({
       title: response.data.message,
     });
+    //for optimistic ui
     onMessageDelete(message._id);
   };
   return (
