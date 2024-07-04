@@ -66,9 +66,9 @@ const SignIn = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email/Username</FormLabel>
+                  <FormLabel>Email/Username</FormLabel> 
                   <FormControl>
-                    <Input placeholder="email/username" {...field} />
+                    <Input placeholder="testtingg" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -83,7 +83,7 @@ const SignIn = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input placeholder="password" type="password" {...field} />
+                    <Input placeholder="123456" type="password" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
