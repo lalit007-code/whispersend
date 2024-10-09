@@ -15,7 +15,7 @@ export default function Home() {
     <main className="flex-gow flex flex-col items-center justify-center px-4 md:px-24 py-12">
       <section className="text-center mb-8 md:mb-12">
         <h1 className=" text-3xl md:text-5xl font-bold">
-          Welcome to a world where your words are your only identity
+          Welcome to a world where your words are your only identity hiii
         </h1>
 
         <p className="mt-3 md:mt-4 text-base md:text-lg">
