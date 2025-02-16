@@ -30,7 +30,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Button size="lg" asChild>
-                  <Link href="/signup">
+                  <Link href="/sign-up">
                     Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
@@ -159,7 +159,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <Button size="lg" variant="secondary" asChild>
-                  <Link href="/signup">
+                  <Link href="/sign-up">
                     Create Your Account <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
