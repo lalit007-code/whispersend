@@ -13,7 +13,7 @@ export async function sendVerificationEmail(
       service: "gmail",
       auth: {
         user: process.env.NEXT_PUBLIC_PERSONAL_EMAIL,
-        pass: process.env.NEXT_PUBLIC_PERSONAL_PASSWORD,
+        pass: process.env.NEXT_PUBLIC_PERSONAL_PASS,
       },
     });
 
