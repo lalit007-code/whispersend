@@ -4,33 +4,63 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { User } from "next-auth";
 import { Button } from "./ui/button";
+import { MessageSquare } from "lucide-react";
 
 const Navbar = () => {
   const { data: session } = useSession();
   const user: User = session?.user as User;
+
   return (
-    <nav className="p-4 md:p-6 shadow-md">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <a className="text-xl font-bold mb-4 md:mb-0" href="#">
-          Whisper Send
-        </a>
+    <header className="px-4  lg:px-6 h-14 flex items-center backdrop-blur-md shadow-md">
+      <Link className="flex items-center justify-center" href="/">
+        <MessageSquare className="h-6 w-6 mr-2" />
+        <span className="font-bold">FeedbackHub</span>
+      </Link>
+
+      <nav className="ml-auto flex items-center gap-4 sm:gap-6">
+        {!session && (
+          <>
+            <Link
+              className="text-sm font-medium transition-colors"
+              href="#features"
+            >
+              Features
+            </Link>
+            <Link
+              className="text-sm font-medium  transition-colors"
+              href="#how-it-works"
+            >
+              How It Works
+            </Link>
+          </>
+        )}
 
         {session ? (
           <>
-            <span className="mr-4  ">
-              Welcome , {user?.username || user?.email}
+            <Link href="/">Home</Link>
+            <Link href="/dashboard">
+              <span>Dashboard</span>
+            </Link>
+            <span className="text-sm font-medium">
+              Welcome, {user?.username || user?.email}
             </span>
-            <Button className="w-full md:w-auto" onClick={() => signOut()}>
+            <Button
+              variant="ghost"
+              className="text-sm"
+              onClick={() => signOut({ callbackUrl: "/" })}
+            >
               Logout
             </Button>
           </>
         ) : (
           <Link href="/sign-in">
-            <Button className="w-full md:w-auto">Login</Button>
+            <Button variant="ghost" className="text-sm">
+              Login
+            </Button>
           </Link>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

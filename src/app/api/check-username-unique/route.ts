@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/user";
-import { INVALID, z } from "zod";
+import { z } from "zod";
 import { usernameValidation } from "@/schema/signUpSchema";
 
 //shcema for checking uniqueness for username

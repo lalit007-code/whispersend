@@ -51,11 +51,11 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center text-pink-400   min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md ">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Join Whisper Send
+          <h1 className="text-4xl font-extrabold text-pink-500 tracking-tight lg:text-5xl mb-6">
+            Join Feedback Hub
           </h1>
           <p className="mb-4">Sign In to start your anonyms adventure</p>
         </div>
@@ -66,7 +66,7 @@ const SignIn = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email/Username</FormLabel> 
+                  <FormLabel>Email/Username</FormLabel>
                   <FormControl>
                     <Input placeholder="testtingg" {...field} />
                   </FormControl>
@@ -89,7 +89,12 @@ const SignIn = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit">SignIn</Button>
+            <Button
+              type="submit"
+              className="bg-pink-300 text-black hover:bg-pink-500"
+            >
+              SignIn
+            </Button>
           </form>
         </Form>
         <div className="text-center mt-4">
