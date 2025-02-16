@@ -95,7 +95,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-center text-pink-400 items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center  items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md ">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
@@ -162,11 +162,7 @@ const SignUp = () => {
                 </FormItem>
               )}
             />
-            <Button
-              type="submit"
-              className="text-black bg-pink-400 hover:bg-pink-200"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" /> SigningUp...
